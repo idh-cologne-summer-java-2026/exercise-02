@@ -1,12 +1,12 @@
-Fortgeschrittene Programmierung (Java 2)
+Programmierung 2
 
 # Übung 2
 
-Diese Übung wird erstmals als Branch auf GitHub eingereicht. Dazu gibt es unten recht kleinteilige Anweisungen, in späteren Übungen wird das nicht mehr so genau beschrieben.
+Diese Übung wird erstmals als Branch auf GitHub eingereicht. Dazu gibt es unten kleinteilige Anweisungen, in späteren Übungen wird das nicht mehr so genau beschrieben.
 
 ## a) Repository klonen und Eclipse-Projekt anlegen
 
-Klonen Sie dieses Repository direkt in Eclipse, indem Sie `File > Import ...` wählen. Im Dialog danach wählen Sie den `Git`-Zweig und `Projects from Git`, gefolgt von `Clone URI`. Die URI bekommen Sie, indem Sie auf GitHub den grünen Knopf `Code` anklicken, und dann den mit https beschrifteten Link kopieren. Für diese Übung ist das `https://github.com/idh-cologne-java-2-summer-2023/exercise-02.git`.
+Klonen Sie dieses Repository direkt in Eclipse, indem Sie `File > Import ...` wählen. Im Dialog danach wählen Sie den `Git`-Zweig und `Projects from Git`, gefolgt von `Clone URI`. Die URI bekommen Sie, indem Sie auf GitHub den grünen Knopf `Code` anklicken, und dann den mit https beschrifteten Link kopieren. Für diese Übung ist das `https://github.com/idh-cologne-summer-java-2026/exercise-02.git`.
 
 Klicken Sie auf `Next >` und vergessen Sie im nächsten Dialog nicht, ihre GitHub-Authentifizierungsdaten anzugeben (damit Sie später auch wieder etwas hochladen können).
 
@@ -27,7 +27,7 @@ Als Basiscode innerhalb des Projektes finden Sie die Referenzlösung aus Übung 
 
 Danach erweitern Sie die ATM-Klasse um zwei Aspekte:
 
-1. Der Automat sollte verschiedene Konten verwalten können. D.h. dass Benutzer:innen im Dialog zunächst ihre Kontonummer angeben müssen, und danach den Betrag. Der Geldautomat weiß dann für alle inviduellen Benutzer:innen, wie viel Geld diese noch auf dem Konto haben.
+1. Der Automat sollte verschiedene Konten verwalten können. D.h. dass Benutzer:innen im Dialog zunächst ihre Kontonummer angeben müssen, und danach den Betrag. Der Geldautomat weiß dann für alle inviduellen Benutzer:innen, wie viel Geld diese noch auf dem Konto haben. Dafür brauchen Sie eine passende Datenstruktur, also z.B. ein Array.
 
 2. Der Automat verwaltet außerdem, wie viel Bargeld er noch zur Verfügung hat. D.h. auch wenn eine Benutzerin genug Geld auf dem Konto hat, kann es sein, dass sie das Geld nicht bekommt, weil der Automat leer ist. Wenn eine Auszahlung passiert ist, sollte der Automat seinen Bargeldbestand jeweils aktualisieren.
 
@@ -46,7 +46,7 @@ Sorry, the ATM doesn't have that much cash anymore.
 ```
 
 ## d) Commit und Push
-Committen Sie alle Ihre Änderungen am Quellcode, und pushen Sie den neuen Branch auf das remote namens `origin` (= GitHub). Um über HTTPS pushen zu können, verwenden Sie **nicht** Ihr Passwort. Stattdessen müssen Sie auf GitHub ein sog. *personal access token* erzeugen, und dieses anstelle Ihres Passwortes verwenden. [Hier](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) gibt es dazu eine Anleitung. Bei scopes müssen Sie nur einen Haken bei `repo` machen, alles andere kann so bleiben.
+Committen Sie alle Ihre Änderungen am Quellcode, und pushen Sie den neuen Branch auf das remote namens `origin` (= GitHub). Um über HTTPS pushen zu können, verwenden Sie **nicht** Ihr Passwort. Stattdessen müssen Sie auf GitHub ein sog. *personal access token (classic)* erzeugen, und dieses anstelle Ihres Passwortes verwenden. [Hier](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) gibt es dazu eine Anleitung. Bei scopes müssen Sie nur einen Haken bei `repo` machen, alles andere kann so bleiben.
 
 In Eclipse wählen Sie dazu `Team > Push to origin ...` oder `Team > Push branch USERNAME ...`
 
