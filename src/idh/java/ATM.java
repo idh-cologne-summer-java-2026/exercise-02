@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 public class ATM 
 {
-	//Start amount of cash
+	//Start amount of cash after filling
 	private int iAmountOfCash = 50;
 	
 	// Array of account number and account balance
@@ -18,6 +18,7 @@ public class ATM
 		    {567, 500},		    
 		    {678, 600},	    
 	};
+	// Row of array that is being used
 	private int iAccountsRow;
 
 	/**
