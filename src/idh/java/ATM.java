@@ -16,9 +16,9 @@ public class ATM
 		    {345, 300},
 		    {456, 400},		    
 		    {567, 500},		    
-		    {678, 600},	    
+		    {678, 600}   
 	};
-	// Row of array that is being used
+	// Row of array of entered account number
 	private int iAccountsRow;
 
 	/**
@@ -34,17 +34,21 @@ public class ATM
 		{
 			try 
 			{
-				System.out.print("Enter your account number: ");
+				System.out.print("Enter your account number: ");	
 				int iAccount = Integer.parseInt(m_br.readLine());
+				
 				boolean bAccountFound = false;
-				for(int i=0; i<aAccounts.length; i++ )
+				int i=0;
+				while(!bAccountFound || i<aAccounts.length)
 				{
 					if(iAccount == aAccounts[i][0])
 					{
 						bAccountFound = true;
 						iAccountsRow = i;
 					}
+					i++;
 				}
+				
 				if(!bAccountFound)
 				{
 					System.out.println("We don't know this account number!");
@@ -62,7 +66,8 @@ public class ATM
 				System.out.print("Enter the amount to withdraw: ");
 				int iAmount = Integer.parseInt(m_br.readLine());
 				cashout(iAmount);
-			} catch (Exception e) 
+			} 
+			catch (Exception e) 
 			{
 				System.out.println("We don't deal in coins!");
 				break;
