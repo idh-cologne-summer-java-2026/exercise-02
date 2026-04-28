@@ -1,11 +1,16 @@
 package idh.java;
 
 import java.io.BufferedReader;
+
 import java.io.InputStreamReader;
+import java.util.List;
+import java.util.ArrayList;
 
 public class ATM {
-	int accountBalance = 100;
-	int ATMBalance = 1000;
+	private List<Integer> bankAccounts = new ArrayList<>();
+	private int accountBalance;
+	int ATMBalance = 20000;
+	private int accountNumber;
 	/**
 	 * Main command loop of the ATM Asks the user to enter a number, and passes this
 	 * number to the function cashout(...) which actually does the calculation and
@@ -18,7 +23,7 @@ public class ATM {
 			try {
 				System.out.println("Enter your account number: ");
 				int accountNumber = Integer.parseInt(br.readLine());
-				
+				accountmanager(accountNumber);
 				System.out.print("Enter the amount to withdraw: ");
 				int amount = Integer.parseInt(br.readLine());
 				cashout(amount);
@@ -31,14 +36,22 @@ public class ATM {
 	public void cashout(int amount) {
 		if (amount < accountBalance || amount < ATMBalance) {
 			accountBalance = accountBalance - amount;
-			System.out.println("Ok, here is your money, enjoy!");
+		    ATMBalance = ATMBalance - amount;
+			System.out.println("Ok, here is your money, enjoy! Your current Balance is: " + accountBalance );
 		} else if (amount > accountBalance){
 			System.out.println("Sorry, not enough money in the bank.");
 		} else {
 			System.out.println("Sorry, the ATM doesnt have that much cash anymore");
 		}
-
+	
 	};
+	public void accountmanager(int accountNumber) {
+	    accountNumber = this.accountNumber;
+	    accountNumber = this.accountBalance = 1000;
+	    bankAccounts.add(accountNumber);
+	    
+	    
+     }
 
 	/**
 	 * Launches the ATM
