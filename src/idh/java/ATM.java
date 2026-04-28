@@ -30,7 +30,7 @@ public class ATM {
 		}
 	}
 
-	public void cashout(int amount) {
+	public void cashout(int amount) { 
 		int i = ; //stuck here
 		if (ATMbalance < amount) {
 			System.out.println("Sorry the ATM doesn't have that much cash anymore");
