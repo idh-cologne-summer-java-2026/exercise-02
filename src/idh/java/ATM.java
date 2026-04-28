@@ -8,9 +8,9 @@ public class ATM {
     int bankBalance = 10000;
 
     Account[] accounts = {
-        new Account(123, 1500),
+        new Account(123, 4500),
         new Account(456, 2300),
-        new Account(789, 800)
+        new Account(789, 5800)
     };
 
     public void run() {
@@ -18,8 +18,15 @@ public class ATM {
 
         while (true) {
             try {
-                System.out.print("Enter account number: ");
+                System.out.print("Enter your Accountnumber: ");
                 int accountNumber = Integer.parseInt(br.readLine());
+                
+                Account account = login(accountNumber);
+                
+                if (account == null) {
+                	System.out.println("Accountnumber: " + accountNumber + " not found!");
+                	continue;
+                }
 
                 System.out.print("Enter the amount to withdraw: ");
                 int amount = Integer.parseInt(br.readLine());
@@ -33,16 +40,18 @@ public class ATM {
     }
 
     public void cashout(int accountNumber, int amount) {
-    	
-        Account account = findAccount(accountNumber);
+
+        Account account = login(accountNumber);
 
 
         if (amount > account.accountBalance) {
             System.out.println("Sorry, not enough money on your account.");
+            return;
         }
 
         if (amount > bankBalance) {
             System.out.println("Sorry, not enough money in the ATM.");
+            return;
         }
 
         account.accountBalance = account.accountBalance - amount;
@@ -52,7 +61,7 @@ public class ATM {
         System.out.println("New account balance: " + account.accountBalance);
     }
 
-    public Account findAccount(int accountNumber) {
+    public Account login(int accountNumber) {
         for (int i = 0; i < accounts.length; i++) {
             if (accounts[i].accountNumber == accountNumber) {
                 return accounts[i];
