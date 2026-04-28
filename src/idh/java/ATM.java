@@ -4,8 +4,11 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ATM {
-	int accountBalance = 100;
+	
+	int[] accountBalances = new int[] {100, 1000, 10000};
 
+	int storage = 500;
+	
 	/**
 	 * Main command loop of the ATM Asks the user to enter a number, and passes this
 	 * number to the function cashout(...) which actually does the calculation and
@@ -16,23 +19,32 @@ public class ATM {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			try {
+				System.out.print("Enter your account number: ");
+				int accountNumber = Integer.parseInt(br.readLine());
 				System.out.print("Enter the amount to withdraw: ");
 				int amount = Integer.parseInt(br.readLine());
-				cashout(amount);
+				cashout(accountNumber, amount);
+			} catch (NumberFormatException e) {
+				System.err.println("This wasn't a number. Try again!");
 			} catch (Exception e) {
 				break;
 			}
 		}
 	}
 
-	public void cashout(int amount) {
-		if (amount < accountBalance) {
-			accountBalance = accountBalance - amount;
-			System.out.println("Ok, here is your money, enjoy!");
-		} else {
-			System.out.println("Sorry, not enough money in the bank.");
+	
+	public void cashout(int accountNumber, int amount) {
+		if (amount > storage) {
+			System.err.println("Sorry, the ATM is out of cash.");
+			return;
 		}
-
+		if (amount > accountBalances[accountNumber]) {
+			System.out.println("Sorry, you're out of money.");
+			return;
+		}
+		accountBalances[accountNumber] = accountBalances[accountNumber] - amount;
+		storage = storage - amount;
+		System.out.println("Ok, here is your money, enjoy!");
 	};
 
 	/**
