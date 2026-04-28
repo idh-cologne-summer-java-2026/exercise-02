@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 public class ATM {
 	int cash = 1000;
 
-//AAAAAAA
+//Ich bin sooooo sauer
 	public void run(account[] Users){
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
