@@ -16,7 +16,7 @@ public class ATM {
 	 */
 	public ATM() {
 		for(int i=0; i<accounts.length; i++) {
-			accounts[i]= new Account(i,500); 
+			accounts[i]= new Account(i,100); 
 		}
 	}
 	public void run() {
