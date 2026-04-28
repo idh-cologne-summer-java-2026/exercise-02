@@ -5,12 +5,7 @@ import java.io.InputStreamReader;
 public class ATM {
 	int cash = 1000;
 
-	/**
-	 * Main command loop of the ATM Asks the user to enter a number, and passes this
-	 * number to the function cashout(...) which actually does the calculation and
-	 * produces money. If the user enters anything else than an integer number, the
-	 * loop breaks and the program exists
-	 */
+
 	public void run(account[] Users){
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
