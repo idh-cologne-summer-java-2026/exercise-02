@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ATM {
-	int accountBalance = 100;
+	int[] accountBalance = {100, 200, 50};
+	int[] accountNumbers = {123, 234, 345};
+	int atmCash = 500;
 
 	/**
 	 * Main command loop of the ATM Asks the user to enter a number, and passes this
@@ -16,22 +18,50 @@ public class ATM {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
 			try {
+				System.out.println("Enter your account number: ");
+				int accountNumber = Integer.parseInt(br.readLine());
+				
 				System.out.print("Enter the amount to withdraw: ");
 				int amount = Integer.parseInt(br.readLine());
-				cashout(amount);
+				
+				cashout(accountNumber, amount);
 			} catch (Exception e) {
 				break;
 			}
 		}
 	}
 
-	public void cashout(int amount) {
-		if (amount < accountBalance) {
-			accountBalance = accountBalance - amount;
-			System.out.println("Ok, here is your money, enjoy!");
-		} else {
-			System.out.println("Sorry, not enough money in the bank.");
+	public void cashout(int accountNumber, int amount) {
+		
+		int index = -1;
+		
+		for (int i = 0; i < accountNumbers.length; i++) {
+			if (accountNumbers[i] == accountNumber) {
+				index = i;
+				break;
+			}
+
 		}
+		
+		if (index == -1) {
+			System.out.println("Account not found.");
+			return;
+		}
+		
+		
+		if (amount > accountBalance[index]) {
+			System.out.println("Sorry, not enough money in the bank.");
+			return;
+		}
+		
+		if (amount > atmCash) {
+		System.out.println("Sorry, the ATM doesn't have that much cash anymore.");
+		return;
+		}
+		
+		accountBalance[index] -= amount;
+		atmCash -= amount;
+		System.out.println("Ok, here you go!");
 
 	};
 
