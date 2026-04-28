@@ -19,6 +19,7 @@ public class ATM {
 	 * produces money. If the user enters anything else than an integer number, the
 	 * loop breaks and the program exists
 	 */
+        @SuppressWarnings("UseSpecificCatch")
 	public void run() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		while (true) {
