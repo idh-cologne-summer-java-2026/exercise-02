@@ -5,12 +5,12 @@ import java.io.InputStreamReader;
 
 public class ATM {
 
-    int bankBalance = 1000;
+    int bankBalance = 10000;
 
     Account[] accounts = {
-        new Account(1001, 500),
-        new Account(1002, 300),
-        new Account(1003, 800)
+        new Account(123, 1500),
+        new Account(456, 2300),
+        new Account(789, 800)
     };
 
     public void run() {
