@@ -45,7 +45,7 @@ public class ATM {
 		}
 
 		
-		// NEU: Die neuen Bedingungen prüfen
+		// NEU:Die neuen Bedingungen prüfen
 		if (amount > balances[index]) {
 			System.out.println("Sorry, you don't have enough money in the bank.");
 		} else if (amount > atmCash) {
