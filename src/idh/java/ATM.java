@@ -4,11 +4,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ATM {
-	// ALT: int accountBalance = 100;
-	// NEU: Ein Array für die Kontonummern, eins für den Kontostand und eins für den Automatenbestand
+	// Ein Array für die Kontonummern, eins für den Kontostand und eins für den Automatenbestand
 	int[] accounts = {123, 234, 345};
 	int[] balances = {100, 100, 100};
-	int atmCash = 50; // Der Automat startet mit 50 Geldeinheiten
+	int atmCash = 50; 
 
 	/**
 	 * Main command loop of the ATM Asks the user to enter a number, and passes this
@@ -45,7 +44,7 @@ public class ATM {
 			}
 		}
 
-		// ALT: if (amount < accountBalance) ...
+		
 		// NEU: Die neuen Bedingungen prüfen
 		if (amount > balances[index]) {
 			System.out.println("Sorry, you don't have enough money in the bank.");
