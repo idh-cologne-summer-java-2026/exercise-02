@@ -4,8 +4,16 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class ATM {
+	private int balance;
+	private int number;
+	private static Account[] accounts = new Account[10];
 	int accountBalance = 100;
-
+	
+	public Account(int number) {
+		Random random = new Random();
+		this.balance = 
+	}
+	
 	/**
 	 * Main command loop of the ATM Asks the user to enter a number, and passes this
 	 * number to the function cashout(...) which actually does the calculation and
@@ -42,5 +50,6 @@ public class ATM {
 		ATM atm = new ATM();
 		atm.run();
 	};
+	
 
 }
