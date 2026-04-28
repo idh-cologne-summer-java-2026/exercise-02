@@ -56,9 +56,6 @@ public class ATM {
  
 	};
 
-	/**
-	 * Launches the ATM
-	 */
 	public static void main(String[] args) {
 		ATM atm = new ATM();
 		account[] accounts = {
